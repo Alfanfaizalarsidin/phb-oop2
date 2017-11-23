@@ -1,0 +1,47 @@
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Daftar Pasien</title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" 
+              content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <body>
+        <h1>Daftar Pasien</h1>
+        
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>No Pasien</th>
+                    <th>Nama Pasien</th>
+                    <th>Nama Dokter</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="psn : ${daftarPasien}">
+                    <td th:text="${psn.id}"></td>
+                    <td th:text="${psn.nama}"></td>
+                    <td th:text="${psn.dokter}"></td>
+                    <td>
+            <a th:href="@{/edit(id=${psn.id})}">
+                Ubah
+            </a>
+                    </td>
+                    <td>
+            <a th:href="@{/hapus(id=${psn.id})}">
+                Hapus
+            </a>
+                    </td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                  <td>
+                      <a href="/tambah-data.html">
+                          Tambah
+                      </a>
+                  </td>
+                </tr>
+            </tfoot>
+        </table>
+    </body>
+</html>

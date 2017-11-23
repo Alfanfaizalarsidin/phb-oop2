@@ -1,0 +1,32 @@
+<html>
+<head>
+	<title>Formulir Ubah Data</title>
+</head>
+<body>
+	<h1>Formulir Ubah Data</h1>
+
+	<form th:object="${psn}" 
+		th:action="@{/edit}"
+		method="post">
+		<table>
+			<tr>
+				<td>No Pasien</td>
+				<td><input type="text" 
+					th:field="*{id}"
+					readonly="true" /></td>
+			</tr>
+			<tr>
+				<td>Nama Pasienn</td>
+				<td><input type="text" 
+					th:field="*{nama}"/></td>
+			</tr>
+			<tr>
+				<td>Nama Dokter</td>
+				<td><input type="text" 
+					th:field="*{dokter}"/></td>
+			</tr>
+		</table>
+		<button type="submit">Simpan</button>
+	</form>
+</body>
+</html>
